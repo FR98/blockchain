@@ -43,8 +43,12 @@ contract Computer {
         }
     }
 
-    function retrieve_computers() public view returns (array(uint) available_computers) {
+    function retrieve_computer_is_available(uint index) public view returns (bool){
         return computers[index].available;
+    }
+
+    function retrieve_computer_current_address(uint index) public view returns (address){
+        return computers[index].occupant;
     }
 
 }
