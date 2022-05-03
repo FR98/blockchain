@@ -40,9 +40,9 @@ accounts
 
 - Example of using a contract
 ```js
-let storage = await Storage.deployed() // Get instance of my contract: Storage
-storage.store(10)
-storage.retrieve()
+let contract = await Contract.deployed()
+contract.store(10)
+contract.retrieve()
 ```
 
 ```shell
