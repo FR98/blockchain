@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
-const reducer = combineReducers({});
+import computers from './computers';
+
+const reducer = combineReducers({
+    computers,
+});
 
 export default reducer;

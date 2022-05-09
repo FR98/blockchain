@@ -10,6 +10,7 @@ import Computer from '../Computer';
 library.add(faComputer);
 const web3 = new Web3("ws://localhost:7545");
 web3.eth.getAccounts().then(console.log);
+web3.eth.defaultAccount = web3.eth.accounts[0];
 
 const computer_abi = require('../../blockchain/build/contracts/Computer.json').abi;
 const computer = new web3.eth.Contract(computer_abi);
@@ -22,13 +23,27 @@ function App() {
         <div className="App">
             <Provider store={store}>
                 <header className="App-header">
-                    <Computer contract={computer} id={1} />
-                    <Computer contract={computer} id={2} />
+                    <h1>Computers</h1>
+                    <table>
+                        <tr>
+                            <td><Computer contract={computer} id={1} /></td>
+                            <td><Computer contract={computer} id={2} /></td>
+                            <td><Computer contract={computer} id={3} /></td>
+                            <td><Computer contract={computer} id={4} /></td>
+                            <td><Computer contract={computer} id={5} /></td>
+                        </tr>
+                        <tr>
+                            <td><Computer contract={computer} id={6} /></td>
+                            <td><Computer contract={computer} id={7} /></td>
+                            <td><Computer contract={computer} id={8} /></td>
+                            <td><Computer contract={computer} id={9} /></td>
+                            <td><Computer contract={computer} id={10} /></td>
+                        </tr>
+                    </table>
                 </header>
             </Provider>
         </div>
     );
 }
-    
+
 export default App;
-    
