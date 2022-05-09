@@ -1,16 +1,18 @@
 import * as types from '../types/computers';
 
-export const useComputer = (contract, id) => ({
+export const useComputer = (account, contract, id) => ({
     type: types.USE_COMPUTER,
     payload: {
+        account,
         contract,
         id,
     }
 });
 
-export const leftComputer = (contract, id) => ({
+export const leftComputer = (account, contract, id) => ({
     type: types.LEFT_COMPUTER,
     payload: {
+        account,
         contract,
         id,
     },

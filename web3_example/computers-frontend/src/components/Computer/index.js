@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as actions from '../../actions/computers';
 
 
-function Computer({ contract, id, available, interactComputer, retrieveComputerStatus }) {
+function Computer({ account, contract, id, available, interactComputer, retrieveComputerStatus }) {
     useEffect(retrieveComputerStatus, []);
 
     return (
@@ -26,11 +26,11 @@ export default connect(
         available: state.computers.byId[id].available,
     }),
     dispatch => ({
-        useComputer(contract, id) {
-            dispatch(actions.useComputer(contract, id));
+        useComputer(account, contract, id) {
+            dispatch(actions.useComputer(account, contract, id));
         },
-        leftComputer(contract, id) {
-            dispatch(actions.leftComputer(contract, id));
+        leftComputer(account, contract, id) {
+            dispatch(actions.leftComputer(account, contract, id));
         },
         retrieveComputerStatus(contract, id) {
             dispatch(actions.retrieveComputerIsAvailableStarted(contract, id));
@@ -42,9 +42,9 @@ export default connect(
         ...dispatchProps,
         interactComputer() {
             if (stateProps.available) {
-                dispatchProps.useComputer(ownProps.contract, ownProps.id);
+                dispatchProps.useComputer(ownProps.account, ownProps.contract, ownProps.id);
             } else {
-                dispatchProps.leftComputer(ownProps.contract, ownProps.id);
+                dispatchProps.leftComputer(ownProps.account, ownProps.contract, ownProps.id);
             }
         },
         retrieveComputerStatus() {

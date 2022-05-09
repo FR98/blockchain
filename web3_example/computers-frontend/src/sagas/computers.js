@@ -14,8 +14,7 @@ import * as types from '../types/computers';
 
 
 function* useComputer(action) {
-    const result = yield action.payload.contract.methods.use_computer(action.payload.id).call();
-    console.log('useComputer', action.payload.id);
+    const result = yield action.payload.contract.methods.use_computer(action.payload.id).send({ from: action.payload.account, gas: 50000, gasPrice: 1e6 });;
     yield put(actions.retrieveComputerIsAvailableStarted(action.payload.contract, action.payload.id));
 }
     
@@ -29,8 +28,7 @@ export function* watchUseComputer() {
 
 
 function* leftComputer(action) {
-    const result = yield action.payload.contract.methods.left_computer(action.payload.id).call();
-    console.log('leftComputer', action.payload.id);
+    const result = yield action.payload.contract.methods.left_computer(action.payload.id).send({ from: action.payload.account, gas: 50000, gasPrice: 1e6 });;
     yield put(actions.retrieveComputerIsAvailableStarted(action.payload.contract, action.payload.id));
 }
     
