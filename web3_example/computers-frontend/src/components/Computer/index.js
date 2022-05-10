@@ -23,7 +23,7 @@ function Computer({ account, contract, id, available, interactComputer, retrieve
 
 export default connect(
     (state, { id }) => ({
-        available: state.computers.byId[id].available,
+        available: state.computers.byId && state.computers.byId[id].available,
     }),
     dispatch => ({
         useComputer(account, contract, id) {
