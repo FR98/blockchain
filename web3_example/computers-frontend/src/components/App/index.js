@@ -23,7 +23,7 @@ if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
     window.ethereum.request({ method: 'eth_requestAccounts' })
 
     computer = new web3.eth.Contract(computer_abi);
-    computer.options.address = '0xef7a6EC8F522E468976cA7eCA5b2AC52f7638F4d'; // Address of the contract
+    computer.options.address = '0xE8b848f0220Ee779172E765675B330f7FcC136Dc'; // Address of the contract
 } else {
     console.log('Using localhost!');
 
@@ -32,7 +32,7 @@ if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
     // account = '0xBcbE5811817Ce9c7146Ac875535D7195DecE7Eb5';
 
     computer = new web3.eth.Contract(computer_abi);
-    computer.options.address = '0xef7a6EC8F522E468976cA7eCA5b2AC52f7638F4d'; // Address of the contract
+    computer.options.address = '0xE8b848f0220Ee779172E765675B330f7FcC136Dc'; // Address of the contract
 }
 
 function App() {
